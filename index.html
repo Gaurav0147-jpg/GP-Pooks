@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Pookie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;700&family=Dancing+Script:wght@700&display=swap');
+        
+        body { font-family: 'Crimson Pro', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .font-handwriting { font-family: 'Dancing Script', cursive; }
+        
+        .legal-pad-lines {
+            background-image: linear-gradient(#94a3b8 1px, transparent 1px);
+            background-size: 100% 2.5rem;
+        }
+        .animate-fade-in-zoom { animation: fadeInZoom 0.6s ease-out forwards; }
+        @keyframes fadeInZoom {
+            from { opacity: 0; transform: scale(0.98) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .polaroid {
+            background: white;
+            padding: 10px 10px 30px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+        .polaroid:hover { transform: rotate(0deg) scale(1.05); z-index: 10; }
+        .polaroid img { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid #eee; }
+        
+        .img-error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f4f6;
+            color: #9ca3af;
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="bg-stone-300 min-h-screen flex items-center justify-center p-4 md:p-10">
+
+    <!-- Case File Cover -->
+    <div id="case-file" class="w-full max-w-lg bg-[#c2a378] shadow-2xl rounded-sm cursor-pointer transform hover:scale-[1.02] transition-all duration-500 border-l-[12px] border-[#a68a62] relative overflow-hidden min-h-[700px] flex flex-col justify-between p-10" onclick="openFile()">
+        <div class="absolute top-0 right-0 p-4 opacity-10">
+            <i data-lucide="scale" class="w-48 h-48"></i>
+        </div>
+        
+        <div class="space-y-8">
+            <div class="bg-red-800 text-white w-fit px-4 py-1 text-xs tracking-widest uppercase font-sans font-bold shadow-md">
+                Confidential & Privileged
+            </div>
+            
+            <div class="space-y-4 border-b-2 border-black/20 pb-8">
+                <h2 class="text-sm font-sans font-bold text-stone-900 tracking-tighter uppercase italic">Case Ref: 14-FEB-2026</h2>
+                <h1 class="text-4xl font-bold text-stone-950 leading-tight tracking-tight">
+                    THE MATTER OF <br/>ROSHNI BHANDARY
+                </h1>
+            </div>
+
+            <div class="space-y-6 pt-4">
+                <div class="flex items-center gap-3 text-stone-900">
+                    <i data-lucide="gavel" class="w-6 h-6"></i>
+                    <span class="text-lg uppercase tracking-widest font-sans font-bold">Subject: Final Summation</span>
+                </div>
+                <p class="text-stone-800 text-lg italic border-l-4 border-stone-900/20 pl-4">
+                    "Regarding her status as an Extraordinary Partner & Senior Counsel"
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-4">
+            <div class="flex items-center gap-2 animate-bounce">
+                <span class="text-stone-950 font-sans text-sm font-bold tracking-widest">BREAK SEAL TO VIEW EVIDENCE</span>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-stone-950"></i>
+            </div>
+            <div class="w-full h-1 bg-stone-900/10"></div>
+        </div>
+    </div>
+
+    <!-- Legal Pad Content -->
+    <div id="legal-pad" class="hidden w-full max-w-4xl animate-fade-in-zoom">
+        <div class="bg-[#fef9c3] shadow-2xl min-h-[1000px] relative overflow-hidden border-t-[12px] border-[#facc15]">
+            <div class="absolute left-16 top-0 bottom-0 w-[2px] bg-red-400 opacity-60"></div>
+            
+            <div class="pl-24 pr-12 py-16 relative">
+                <div class="absolute inset-0 pointer-events-none legal-pad-lines mt-[4.5rem]"></div>
+
+                <div class="relative space-y-10 leading-[2.5rem] text-stone-800 text-lg">
+                    <div class="border-b-2 border-stone-800 pb-2">
+                        <h1 class="text-2xl font-bold text-stone-900 uppercase tracking-tighter italic">
+                            BEFORE THE TRIBUNAL OF OUR RELATIONSHIP
+                        </h1>
+                    </div>
+
+                    <div class="text-sm font-sans font-bold flex justify-between uppercase border-b border-stone-400/30 pb-1">
+                        <span>TO: ROSHNI BHANDARY</span>
+                        <span>FROM: GAURAV PRABHU</span>
+                    </div>
+
+                    <section>
+                        <h2 class="font-bold underline text-stone-950">I. OPENING STATEMENT</h2>
+                        <p class="indent-10">
+                            Your Honor—or rather, Roshni—the evidence presented over the past year leads to only one inescapable conclusion. While the world sees a formidable lawyer who commands a courtroom, the defense (me) has had the unique privilege of seeing the woman behind the brief. Today, I rest my case on the following grounds.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="font-bold underline text-stone-950 flex items-center gap-2">
+                            <i data-lucide="award" class="w-5 h-5 text-blue-700"></i> II. EXHIBIT A: THE STRENGTH OF CHARACTER
+                        </h2>
+                        <p class="indent-10">
+                            The prosecution might argue that being a lawyer is about logic, but I submit Exhibit A: your empathy. I have witnessed how you carry the weight of your clients' problems while still finding the emotional bandwidth to support me as I build <span class="font-bold text-blue-900">GP Advisory</span>. Your resilience isn't just a professional trait; it’s the bedrock of our partnership.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="font-bold underline text-stone-950 flex items-center gap-2">
+                            <i data-lucide="scroll-text" class="w-5 h-5 text-blue-700"></i> III. EXHIBIT B: THE "LITTLE THINGS" DOCTRINE
+                        </h2>
+                        <p class="indent-10">
+                            Under the doctrine of <span class="italic font-bold">"Small Gestures (and more!)"</span>, I present Exhibit B. It is not the grand displays that define us, but the way you cook for me even when you don’t feel like it because I am always ranting about the lack of non-veg food at home. It’s the way you ask me <span class="font-bold underline underline-offset-4">"how many"</span>—and I get confused whether you are asking about the number of people or the number of drinks. And more recently, those Hindi abuses you hurl at me jokingly... I must admit, I am thoroughly impressed.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="font-bold underline text-stone-950">IV. REBUTTAL TO ANY DOUBT</h2>
+                        <p class="indent-10">
+                            Should there be any "reasonable doubt" regarding your impact on my life, let the record show that during my most challenging transitions, you have been my most steadfast counsel. You are the <span class="font-bold">"Senior Partner and SENIOR COUNSEL"</span> in the firm of my heart.
+                        </p>
+                    </section>
+
+                    <section class="bg-white/40 p-6 border-2 border-stone-400/50 rounded-sm shadow-inner relative overflow-hidden">
+                        <div class="absolute -right-4 -top-4 opacity-10">
+                            <i data-lucide="heart" class="w-24 h-24 fill-red-600"></i>
+                        </div>
+                        <h2 class="font-bold underline text-red-800">V. PRAYER FOR RELIEF (THE CONCLUSION)</h2>
+                        <ul class="list-disc pl-8 space-y-2 font-bold">
+                            <li>That you continue to be an awesome human being</li>
+                            <li>That we continue this partnership for a term of no less than a lifetime, with no possibility of parole.</li>
+                        </ul>
+                        <p class="mt-4 italic text-stone-900">
+                            Lastly, the most important point—your tremendous talent to calm me down in most (if not all 😊) situations is commendable. <span class="font-bold uppercase tracking-widest text-red-700">SALUTE!</span>
+                        </p>
+                        
+                        <!-- Added Text -->
+                        <p class="mt-8 text-3xl font-handwriting text-red-700 text-center tracking-wide">
+                            Happy Valentine's Day, Pooks
+                        </p>
+                    </section>
+
+                    <!-- Closing -->
+                    <div class="pt-8 flex justify-between items-end border-t border-stone-800/20">
+                        <div class="space-y-1">
+                            <p class="font-bold">Respectfully submitted,</p>
+                            <p class="text-4xl italic text-blue-900 font-bold py-2">Gaurav Prabhu</p>
+                            <p class="text-xs font-sans text-stone-600 font-bold uppercase tracking-widest">And Your Biggest Fan</p>
+                        </div>
+                        <div class="text-center opacity-70">
+                            <i data-lucide="shield-check" class="w-12 h-12 mx-auto text-stone-600"></i>
+                            <span class="text-[10px] uppercase font-sans font-bold">Authenticated Evidence</span>
+                        </div>
+                    </div>
+
+                    <!-- Annexure: Photos -->
+                    <div class="pt-16 space-y-8">
+                        <h3 class="font-sans font-bold text-sm tracking-widest text-stone-500 uppercase border-b border-stone-300 pb-2">Annexure: Photographic Evidence</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-24">
+                            <!-- Photo 1 -->
+                            <div class="polaroid">
+                                <img src="img1.jpg" id="img1" alt="Exhibit 1" onerror="handleImageError(this, 'img1.jpg')">
+                                <p class="text-[10px] mt-4 font-sans font-bold uppercase text-center leading-tight px-1 italic">First image I clicked of you (NO - I didn't slyly ever click you before this during the stalking phase)</p>
+                            </div>
+                            <!-- Photo 2 -->
+                            <div class="polaroid" style="transform: rotate(3deg)">
+                                <img src="img2.jpg" id="img2" alt="Exhibit 2" onerror="handleImageError(this, 'img2.jpg')">
+                                <p class="text-[10px] mt-4 font-sans font-bold uppercase text-center leading-tight px-1 italic">The first ever photo clicked from my back then new phone</p>
+                            </div>
+                            <!-- Photo 3 -->
+                            <div class="polaroid" style="transform: rotate(-1deg)">
+                                <img src="img3.jpg" id="img3" alt="Exhibit 3" onerror="handleImageError(this, 'img3.jpg')">
+                                <p class="text-3xl mt-4 font-sans font-bold text-center text-red-600">❤️</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button onclick="closeFile()" class="my-10 mx-auto flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors font-sans text-xs font-bold uppercase tracking-widest pb-10">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> Return to Case Folder
+        </button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.title = "Happy Valentine's Day, Pookie";
+            lucide.createIcons();
+        };
+
+        function handleImageError(img, filename) {
+            const container = img.parentElement;
+            img.style.display = 'none';
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'img-error h-[250px]';
+            errorDiv.innerHTML = `File Missing:<br/>"${filename}"<br/><br/>Rename your photo to "${filename}" and upload to the GitHub root.`;
+            container.prepend(errorDiv);
+        }
+
+        function openFile() {
+            document.getElementById('case-file').classList.add('hidden');
+            document.getElementById('legal-pad').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeFile() {
+            document.getElementById('legal-pad').classList.add('hidden');
+            document.getElementById('case-file').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
